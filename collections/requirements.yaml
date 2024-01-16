@@ -1,0 +1,9 @@
+---
+collections:
+  - name: "community.vmware"
+roles:
+  - name: "vmware_vm_manager"
+    src: "git@github.com:shellclear/vmware_vm_manager.git"
+    scm: git
+    version: "main"
+...

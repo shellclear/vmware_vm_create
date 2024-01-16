@@ -1,0 +1,37 @@
+---
+- name: "Create VM on VMware hypervisor"
+  hosts: "localhost"
+  gather_facts: False
+  vars:
+    vmware_vm_manager_hostname: "portal.vc.example.com"
+    vmware_vm_manager_username: "user@example.com"
+    vmware_vm_manager_password: "mysecretpass"
+    vmware_vm_manager_datacenter: "Datacenter"
+    vmware_vm_manager_cluster: "Cluster"
+    vmware_vm_manager_folder: "Workloads/sandbox-user" 
+    vmware_vm_manager_name: "redhat"
+    vmware_vm_manager_state: "poweredon"
+    vmware_vm_manager_template: "rhel9-tpl"
+    vmware_vm_manager_disk:
+    - size_gb: 15
+      type: "thin"
+      datastore: "WorkloadDatastore"
+    vmware_vm_manager_hardware:
+      memory_mb: 4096
+      num_cpus: 4
+      num_cpu_cores_per_socket: 2
+    vmware_vm_manager_networks:
+    - name: "segment-sandbox-user"
+    vmware_vm_manager_vm_tag_names: 
+      - el
+    vmware_vm_manager_tag_category_name: "os"
+    vmware_vm_manager_tag_category_description: "Operational system"
+    vmware_vm_manager_create_tag_name: "el"
+    vmware_vm_manager_create_tag_description: "os type"
+  tasks:
+    - name: "Include vmware_vm_manager role"
+      ansible.builtin.include_role:
+        name: "vmware_vm_manager"
+...
+
+...
