@@ -28,7 +28,7 @@ How to use
             ```
         3. Install Ansible package:
             ```
-            pip install -U ansible
+            pip install -U ansible-core
             ```
 
 - Installing Ansible collections and roles
