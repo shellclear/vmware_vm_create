@@ -63,7 +63,7 @@ Running from the ansible-navigator
 
 - Bulding EE image
     ```
-    ansible-builder build -v3
+    ansible-builder build -f execution-environment.yaml -v3
     ```
 
 - Run the playbook
