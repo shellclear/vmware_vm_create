@@ -15,7 +15,7 @@ How to use
     - To install from the package manager on EL based distrubution using dnf
         1. Installing the Ansible rpm package
             ```
-            dns install ansible
+            dnf install ansible
             ```            
     - To install from the pip package manager
         1. Create a virtualenvironment
