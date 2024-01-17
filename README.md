@@ -12,12 +12,12 @@ How to use
 ----------
 
 - Instal Ansible, from a package manager of your distribution or using python
-    - For EL based use dnf
-        1. Install Ansible rpm package
+    - To install from the package manager on EL based distrubution using dnf
+        1. Installing the Ansible rpm package
             ```
             dns install ansible
             ```            
-    - From the pip
+    - To install from the pip package manager
         1. Create a virtualenvironment
             ```
             python -m venv ansible
@@ -50,6 +50,27 @@ How to use
     ```
     ansible-playbook playbook.yaml
     ```
+
+Running from the ansible-navigator
+----------------------------------
+
+:spiral_notepad: Podman or Docker required
+
+- Installing ansible-builder and ansible-navigator commands
+    ```
+    pip install ansible-builder ansible-navigator
+    ```
+
+- Bulding EE image
+    ```
+    ansible-builder build -v3
+    ```
+
+- Run the playbook
+    ```
+    ansible-navigator run --eei localhost/ansible-execution-env:latest --pp never playbook.yaml
+    ```
+
 License
 -------
 
